@@ -1,0 +1,16 @@
+<h1>Welcome to the Furniture Store!</h1>
+<p>See all of your products below:</p>
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Price</th>
+		<th>Category</th>
+	</tr>
+	<% @products.each do |product| %>
+	<tr>
+		<td><%= link_to product.name, one_product_path(id: product.id) %></td>
+		<td><%= number_to_currency product.price %></td>
+		<td><%= link_to product.category, by_category_path(category: product.category) %></td>
+	</tr>
+	<% end %>
+</table>
